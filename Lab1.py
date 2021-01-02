@@ -5,12 +5,12 @@ import numpy as np
 
 
 # Создание датафейма из файла .csv
-
+# Задание 1.1
 df = pd.read_csv('brazilian-malware.csv')
 df
 
-# Находим длину нашего датафрейма
 
+# Задание 1.2
 
 
 import matplotlib.pyplot as plt
@@ -18,34 +18,24 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 sns.displot(df['Entropy'])
 plt.show()
-
 sns.displot(df['FirstSeenDate'])
 plt.show()
-
 sns.displot(df['NumberOfRvaAndSizes'])
 plt.show()
-
 sns.displot(df['NumberOfSections'])
 plt.show()
-
 sns.displot(df['NumberOfSymbols'])
 plt.show()
-
 sns.displot(df['PointerToSymbolTable'])
 plt.show()
-
 sns.displot(df['SizeOfImage'])
 plt.show()
-
 sns.displot(df['SizeOfInitializedData'])
 plt.show()
-
 sns.displot(df['SizeOfOptionalHeader'])
 plt.show()
-
 sns.displot(df['SizeOfUninitializedData'])
 plt.show()
-
 sns.displot(df['TimeDateStamp'])
 plt.show()
 
@@ -282,6 +272,11 @@ print(poloj_dover_int_Entropy_19)
 poloj_dover_int_Entropy_20 = mean20_Entropy +  3 * std20_Entropy
 print(poloj_dover_int_Entropy_20)
 
+
+
+# Сделать FirstSeenDate
+
+
 # Всё о NumberOfRvaAndSizes
 mean_NORAS = np.mean(df['NumberOfRvaAndSizes'])
 print(mean_NORAS, "MEAN_NumberOfRvaAndSizes")
@@ -294,5 +289,108 @@ print(poloj_dover_int_NORAS, "Poloj_NumberOfRvaAndSizes")
 
 
 
+# Сделать NumberOfSections
+
+
+# Всё о NumberOfSymbols
+mean_NOS = np.mean(df['NumberOfSymbols'])
+print(mean_NOS, "MEAN_NumberOfSymbols")
+std_NOS = np.std(df['NumberOfSymbols'])
+print(std_NOS, "STD_NumberOfSymbols")
+otric_dover_int_NOS = mean_NOS - 3 * std_NOS
+print(otric_dover_int_NOS, "Otric_NumberOfSymbols")
+poloj_dover_int_NOS = mean_NOS +  3 * std_NOS
+print(poloj_dover_int_NOS, "Poloj_NumberOfSymbols")
+
+# Всё о PointerToSymbolTable
+mean_PTST = np.mean(df['PointerToSymbolTable'])
+print(mean_PTST, "MEAN_PointerToSymbolTable")
+std_PTST = np.std(df['PointerToSymbolTable'])
+print(std_PTST, "STD_PointerToSymbolTable")
+otric_dover_int_PTST = mean_PTST - 3 * std_PTST
+print(otric_dover_int_PTST, "Otric_PointerToSymbolTable")
+poloj_dover_int_PTST = mean_PTST +  3 * std_PTST
+print(poloj_dover_int_PTST, "Poloj_PointerToSymbolTable")
+
+
+# Сделать SizeOfImage
+# Сделать SizeOfInitializedData
+
+# Всё о SizeOfOptionalHeader
+mean_SOOH = np.mean(df['SizeOfOptionalHeader'])
+print(mean_SOOH, "MEAN_SizeOfOptionalHeader")
+std_SOOH = np.std(df['SizeOfOptionalHeader'])
+print(std_SOOH, "STD_SizeOfOptionalHeader")
+otric_dover_int_SOOH = mean_SOOH - 3 * std_SOOH
+print(otric_dover_int_SOOH, "Otric_SizeOfOptionalHeader")
+poloj_dover_int_SOOH = mean_SOOH +  3 * std_SOOH
+print(poloj_dover_int_SOOH, "Poloj_SizeOfOptionalHeader")
+
+# Всё о SizeOfUninitializedData
+mean_SOUD = np.mean(df['SizeOfUninitializedData'])
+print(mean_SOUD, "MEAN_SizeOfUninitializedData")
+std_SOUD = np.std(df['SizeOfUninitializedData'])
+print(std_SOUD, "STD_SizeOfUninitializedData")
+otric_dover_int_SOUD = mean_SOUD - 3 * std_SOUD
+print(otric_dover_int_SOUD, "Otric_SizeOfUninitializedData")
+poloj_dover_int_SOUD = mean_SOUD +  3 * std_SOUD
+print(poloj_dover_int_SOUD, "Poloj_SizeOfUninitializedData")
+
+# Сделать TimeDateStamp
+
+
+# Задание 1.3
+
+plt.figure()
+df['BaseOfCode'].value_counts(bins=2).plot.bar()
+plt.show()
+
+plt.figure()
+df['BaseOfData'].value_counts(bins=2).plot.bar()
+plt.show()
+
+plt.figure()
+df['Characteristics'].value_counts(bins=7).plot.bar()
+plt.show()
+
+plt.figure()
+df['DllCharacteristics'].value_counts(bins=7).plot.bar()
+plt.show()
+
+plt.figure()
+df['FileAlignment'].value_counts().plot.bar()
+plt.show()
+
+plt.figure()
+df['Identify'].value_counts().plot.bar()
+plt.show()
+
+plt.figure()
+df['ImageBase'].value_counts(bins=20).plot.bar()
+plt.show()
+
+plt.figure()
+df['ImportedDlls'].value_counts().plot.bar()
+plt.show()
+
+plt.figure()
+df['ImportedSymbols'].value_counts().plot.bar()
+plt.show()
+
+plt.figure()
+df['Machine'].value_counts().plot.bar()
+plt.show()
+
+plt.figure()
+df['Magic'].value_counts().plot.bar()
+plt.show()
+
+plt.figure()
+df['PE_TYPE'].value_counts().plot.bar()
+plt.show()
+
+plt.figure()
+df['SHA1'].value_counts().plot.bar()
+plt.show()
 
 
